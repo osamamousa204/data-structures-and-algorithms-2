@@ -26,7 +26,7 @@ let starWarsPeople = [
     }
 ];
 
-let $ = cheerio.load(`
+let $ = createSnippetWithJQuery(`
 <main>
   <section id="template">
     <h2>lkdcmds</h2>
