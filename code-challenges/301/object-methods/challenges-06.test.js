@@ -58,28 +58,23 @@ let characters = [
     }
 ];
 
-let $ = cheerio.load(`
-<h2> {{ name }} </h2>
-<h3> {{ spouse }} </h3>
-{{#children}}
-* {{.}}
-{{/children}}
-<p> {{ house }} </p>
-`)
+let $ = cheerio.load(`                           
+    <h2> {{ name }} </h2>
+    <h3> {{ spouse }} </h3>
+    {{#children}}
+    * {{.}}
+    {{/children}}
+    <p> {{ house }} </p>`
+)
 
 const templatingWithMustache = () => {
     let arr = []
     let output;
     characters.forEach(val => {
-        output = Mustache.render(`
-    ${$('h2')}
-    ${$('h3')}
-    {{#children}}
-    * {{.}}
-    {{/children}}
-    <p> {{ house }} </p>
+    output = Mustache.render(`
+    ${$('body').html()}
   `, val);
-        arr.push(output)
+    arr.push(output)
     })
     return arr
 }
