@@ -9,7 +9,7 @@ CHALLENGE 1 - Review
 Write a function named addTea that uses jQuery to add tea to the shopping list.
 ------------------------------------------------------------------------------------------------ */
 
-let $ = cheerio.load(`
+let $ = createSnippetWithJQuery(`
   <ul>
     <li>apples</li>
     <li>bananas</li>
