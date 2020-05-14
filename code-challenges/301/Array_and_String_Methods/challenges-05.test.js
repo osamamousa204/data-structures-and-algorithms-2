@@ -29,7 +29,7 @@ let starWarsPeople = [
 let $ = createSnippetWithJQuery(`
 <main>
   <section id="template">
-    <h2>lkdcmds</h2>
+    <h2></h2>
     <h3></h3>
     <p></p>
   </section>
@@ -40,9 +40,10 @@ const templateWithJQuery = () => {
     starWarsPeople.forEach((val, idx) => {
         let a = $('#template').clone()
         $(a).appendTo('main')
-        $(`section:nth-child(${idx + 2}) h2`).text(`${val.name}`)
-        $(`section:nth-child(${idx + 2}) h3`).text(`${val.height}`)
-        $(`section:nth-child(${idx + 2}) p`).text(`${val.eye_color}`)
+        a.removeAttr('id')
+        a.find(`h2`).text(val.name)
+        a.find(`h3`).text(val.height)
+        a.find(`p`).text(val.eye_color)
     })
 }
 
