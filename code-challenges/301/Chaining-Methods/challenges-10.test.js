@@ -102,8 +102,6 @@ const divisibleByFiveTwoToThePower = (input) => {
             if ((typeof (val2) === 'number') && !(val2 % 5)) {
                 let num = Math.pow(2, val2)
                 innerarray.push(num)
-            } else if (!(typeof (5) === 'number')) {
-                innerarray.push([])
             }
         })
         outerArray.push(innerarray)

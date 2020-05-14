@@ -67,7 +67,7 @@ Acceptable formats include:
  - 555 555 5555
  - 555555-5555
  - 5555555555
-^\(\b\d{3}\b\)\s\d{3}\-\d{4}\b|^\(\b\d{3}\b\)\d{3}\s\d{4}\b|^\b\d{3}\b\s\d{3}\-\d{4}\b|^\b\d{3}\b\-\d{7}\b|^\b\d{3}\b\-\d{3}\s\d{4}\b|^\b\d{3}\b\-\d{3}\-\d{4}\b|^\b\d{3}\b\s\d{3}\s\d{4}\b$|^\b\d{6}\-\b\d{4}\b|^\b\d{10}\b|^\b\d{3}\b\s\d{7}\b
+
 Your function should include a single regular expression pattern that matches any of these formats.
 
 Return either true or false.
