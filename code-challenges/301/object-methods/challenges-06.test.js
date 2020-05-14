@@ -58,22 +58,22 @@ let characters = [
     }
 ];
 
-let $ = createSnippetWithJQuery(`                           
+let $ = createSnippetWithJQuery(`
     <h2> {{ name }} </h2>
-    <h3> {{ spouse }} </h3>
-    {{#children}}
-    * {{.}}
-    {{/children}}
-    <p> {{ house }} </p>`
-)
+      <h3> {{ spouse }} </h3>
+      {{#children}}
+      * {{.}}
+      {{/children}}
+      <p> {{ house }} </p>`)
 
 const templatingWithMustache = () => {
     let arr = []
     let output;
     characters.forEach(val => {
-    output = Mustache.render(`
-    ${$('body').html()}
-  `, val);
+    output = Mustache.render(
+      `
+      ${$('body').html()}
+    `, val);
     arr.push(output)
     })
     return arr
@@ -218,58 +218,58 @@ Run your tests from the console: jest challenges-06.test.js
 
 describe('Testing challenge 1', () => {
     test('It should return html markup with the character', () => {
-        const filledTemplates = templatingWithMustache();
-        expect(filledTemplates).toStrictEqual([`
-    <h2> Eddard </h2>
-    <h3> Catelyn </h3>
-    * Robb
-    * Sansa
-    * Arya
-    * Bran
-    * Rickon
-    <p> Stark </p>
-  `,
-            `
-    <h2> Jon A. </h2>
-    <h3> Lysa </h3>
-    * Robin
-    <p> Arryn </p>
-  `,
-            `
-    <h2> Cersei </h2>
-    <h3> Robert </h3>
-    * Joffrey
-    * Myrcella
-    * Tommen
-    <p> Lannister </p>
-  `,
-            `
-    <h2> Daenarys </h2>
-    <h3> Khal Drogo </h3>
-    * Drogon
-    * Rhaegal
-    * Viserion
-    <p> Targaryen </p>
-  `,
-            `
-    <h2> Mace </h2>
-    <h3> Alerie </h3>
-    * Margaery
-    * Loras
-    <p> Tyrell </p>
-  `,
-            `
-    <h2> Euron </h2>
-    <h3>  </h3>
-    <p> Greyjoy </p>
-  `,
-            `
-    <h2> Jon S. </h2>
-    <h3>  </h3>
-    <p> Snow </p>
-  `])
+      const filledTemplates = templatingWithMustache();
+      expect(filledTemplates).toStrictEqual([`
+      <h2> Eddard </h2>
+      <h3> Catelyn </h3>
+      * Robb
+      * Sansa
+      * Arya
+      * Bran
+      * Rickon
+      <p> Stark </p>
+    `,
+      `
+      <h2> Jon A. </h2>
+      <h3> Lysa </h3>
+      * Robin
+      <p> Arryn </p>
+    `,
+      `
+      <h2> Cersei </h2>
+      <h3> Robert </h3>
+      * Joffrey
+      * Myrcella
+      * Tommen
+      <p> Lannister </p>
+    `,
+      `
+      <h2> Daenarys </h2>
+      <h3> Khal Drogo </h3>
+      * Drogon
+      * Rhaegal
+      * Viserion
+      <p> Targaryen </p>
+    `,
+      `
+      <h2> Mace </h2>
+      <h3> Alerie </h3>
+      * Margaery
+      * Loras
+      <p> Tyrell </p>
+    `,
+      `
+      <h2> Euron </h2>
+      <h3>  </h3>
+      <p> Greyjoy </p>
+    `,
+      `
+      <h2> Jon S. </h2>
+      <h3>  </h3>
+      <p> Snow </p>
+    `])
     })
-});
+  });
 
 describe('Testing challenge 2', () => {
     test('It should return the keys from an object', () => {
